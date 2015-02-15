@@ -1,0 +1,2 @@
+module AcmePagesHelper
+end
