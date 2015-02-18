@@ -1,0 +1,18 @@
+<% provide(:title, 'Create Newspapers') %>
+<h1>Create Newspaper</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@paper) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+	  <%= f.label :ads %>
+	  <%= select_tag "ads_for_paper", options_from_collection_for_select(Ad.all, 'id', 'company_name',@paper.ads.map{ |j| j.id }), :multiple => true %>
+
+      <%= f.submit "Create a newspaper", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'newspapers/new'
+  get 'createAds' => 'ads#new'
+  get 'createNewspapers' => 'newspapers#new'
   root 'acme_pages#home'
+  resources :ads
+  resources :newspapers
   #get 'acme_pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
